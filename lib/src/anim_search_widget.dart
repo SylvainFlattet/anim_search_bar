@@ -252,7 +252,11 @@ class _AnimSearchBarState extends State<AnimSearchBar>
                 ///prefixIcon is of type Icon
                 icon: widget.prefixIcon != null
                     ? toggle == 1
-                        ? Icon(Icons.arrow_back_ios)
+                        ? Icon(
+                            widget.rtl
+                                ? Icons.arrow_forward_ios
+                                : Icons.arrow_back_ios,
+                          )
                         : widget.prefixIcon!
                     : Icon(
                         toggle == 1 ? Icons.arrow_back_ios : Icons.search,
